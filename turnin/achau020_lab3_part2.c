@@ -25,9 +25,9 @@ int main(void) {
 		tmpC = 0x60;
 	} else if(button == 0x02) {
 		tmpC = 0x60;
-	} else if(button == 0x03) {
+	} else if(button == 0x83) {
 		tmpC = 0x70;
-        } else if(button == 0x04) {
+        } else if(button == 0x84) {
 		tmpC = 0x70;
         } else if(button == 0x05) {
 		tmpC = 0x2F;
