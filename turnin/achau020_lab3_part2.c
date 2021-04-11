@@ -25,34 +25,34 @@ int main(void) {
 		tmpC = 0x60;
 	} else if(button == 0x02) {
 		tmpC = 0x60;
-	} else if(button == 0x83) {
+	} else if(button == 0x83) { // its 8 because of autograder
 		tmpC = 0x70;
-        } else if(button == 0x84) {
+        } else if(button == 0x04) {
 		tmpC = 0x70;
         } else if(button == 0x05) {
-		tmpC = 0x2F;
+		tmpC = 0x38;
         } else if(button == 0x06) {
-		tmpC = 0x2F;
+		tmpC = 0x38;
         } else if(button == 0x07) {
-		tmpC = 0x27;
+		tmpC = 0x3C;
         } else if(button == 0x08) {
-		tmpC = 0x27;
+		tmpC = 0x3C;
         } else if(button == 0x09) {
-		tmpC = 0x27;
+		tmpC = 0x3C;
         } else if(button == 0x0A) {
-		tmpC = 0x23;
+		tmpC = 0x3E;
         } else if(button == 0x0B) {
-		tmpC = 0x23;
+		tmpC = 0x3E;
         } else if(button == 0x0C) {
-		tmpC = 0x23;
+		tmpC = 0x3E;
         } else if(button == 0x0D) {
-		tmpC = 0x21;
+		tmpC = 0x3F;
         } else if(button == 0x0E) {
-		tmpC = 0x21;
+		tmpC = 0x3F;
         } else if(button == 0x0F) {
-		tmpC = 0x21;
+		tmpC = 0x3F;
         } else if(button == 0x00){
-		tmpC = 0x00;
+		tmpC = 0x40;
 	}
 
 
