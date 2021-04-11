@@ -14,20 +14,20 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-	DDRA = 0x00; PORTA = 0xFF;
+	DDRD = 0x00; PORTD = 0xFF;
         DDRB = 0xFF; PORTB = 0x00;
 
 	unsigned char tmpB = 0x00;
 
-	unsigned char tmpA = 0x00;
+	unsigned char tmpD = 0x00;
     /* Insert your solution below */
     while (1) {
-	tmpA = PINA;
-	if(tmpA >= 0x46) {
-		tmpB = 0x01;
-	} else if((tmpA > 0x05) && (tmpA <= 0x45)){
+	tmpD = PIND;
+	if(tmpD >= 0x46) {
+		tmpB = 0x04;
+	} else if(tmpD > 0x05 && tmpD < 0x46) {
 		tmpB = 0x02;
-	} else if (tmpA <= 0x05) {
+	} else if (tmpD <= 0x05) {
 		tmpB = 0x00;
 	} else {
 		tmpB = 0xFF;
