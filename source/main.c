@@ -14,27 +14,29 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-	DDRD = 0x00; PORTD = 0xFF;
-        DDRB = 0xFF; PORTB = 0x00;
+	DDRA = 0x00; PORTA = 0xFF;
+        DDRB = 0x00; PORTB = 0xFF;
+        DDRC = 0xFF; PORTC = 0x00;
 
+	unsigned char tmpA = 0x00;
 	unsigned char tmpB = 0x00;
-
-	unsigned char tmpD = 0x00;
+	unsigned char tmpC = 0x00;
     /* Insert your solution below */
     while (1) {
-	tmpD = PIND;
-	if (tmpD == 0x23) { //this should be 0x04 but autograder wants it to be 2
-                tmpB = 0x02;
-	} else if(tmpD >= 0x46) {
-		tmpB = 0x02;
-	} else if(tmpD > 0x05 && tmpD < 0x46) {
-		tmpB = 0x04;
-	} else if (tmpD <= 0x05) {
-		tmpB = 0x00;
-	} else {
-		tmpB = 0xFF;
+	unsigned int count = 0;
+	tmpA = PINA;
+	tmpB = PINB;
+	while(tmpA != 0){
+		count += tmpA & 0x01;
+		tmpA = tmpA >> 1;
 	}
-	PORTB = tmpB;
+
+	while(tmpB != 0){
+                count += tmpB & 0x01;
+                tmpB = tmpB >> 1;
+        }
+	tmpC = count;
+	PORTC = tmpC;
     }
     return 1;
 }
