@@ -16,23 +16,35 @@ int main(void) {
     /* Insert DDR and PORT initializations */
 	DDRA = 0x00; PORTA = 0xFF;
         DDRB = 0xFF; PORTB = 0x00;
-
+	DDRC = 0xFF; PORTC = 0x00;
 	unsigned char tmpB = 0x00;
-
+        unsigned char tmpC = 0x00;
 	unsigned char tmpA = 0x00;
     /* Insert your solution below */
     while (1) {
+	/*A7 = B3
+ 	  A6 = B2
+	  A5 = B1
+	  A4 = B0
+	
+	  A3 = C7
+	  A2 = C6
+	  A1 = C5
+	  A0 = C4
+	*/
+
 	tmpA = PINA;
-	if(tmpA >= 0x46) {
-		tmpB = 0x01;
-	} else if((tmpA > 0x05) && (tmpA <= 0x45)){
-		tmpB = 0x02;
-	} else if (tmpA <= 0x05) {
-		tmpB = 0x00;
-	} else {
-		tmpB = 0xFF;
-	}
+
+	tmpB = tmpA;
+	tmpB = tmpB >> 4;
+	tmpB = tmpB & 0x0F;
+
+	tmpC = tmpA;	
+	tmpC = tmpC << 4;
+	tmpC = tmpC & 0xF0;	
+
 	PORTB = tmpB;
+	PORTC = tmpC;
     }
     return 1;
 }
