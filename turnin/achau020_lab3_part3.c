@@ -35,8 +35,8 @@ int main(void) {
                 } else {
                         tmpC = 0x60;
                 }
-	} else if(button == 0x83) { // its 8 because of autograder
-                        tmpC = 112;
+	} else if(copyButton == 0x83) { // its 8 because of autograder
+                        tmpC = 0x70;
         } else if(button == 0x04) {
 		if((copyButton & 0x30) == 0x30 && (copyButton >> 6) != 0x01){
                         tmpC = 0xF0;
